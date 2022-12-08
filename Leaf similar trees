@@ -1,0 +1,26 @@
+class Solution {
+public:
+    vector<int> func(vector<int> & r, TreeNode * root)
+    {
+        if(root==NULL)
+        return r;
+        if(root->right==NULL && root->left==NULL)
+        r.push_back(root->val);
+        func(r,root->left);
+        func(r,root->right);
+        return r;
+    }
+    bool leafSimilar(TreeNode* root1, TreeNode* root2) {
+        vector<int>r1(0);
+        vector<int>r2(0);
+        func(r1,root1);
+        func(r2,root2);
+        if(r1.size()==r2.size())
+       
+        
+            if(r1==r2)
+                return true;
+        
+        return false;
+    }
+};
